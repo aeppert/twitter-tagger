@@ -21,3 +21,29 @@ $ node app.js baseball yankees "new york"
 ```
 
 
+# Pushing to yhat dokku server
+This is very much like how you push to heroku.
+
+### Adding the remote
+
+```bash
+$ git remote add live dokku@54.83.27.88:twitter-tagger
+```
+
+### Pushing
+
+```bash
+$ git push live master
+```
+
+### SSH-ing onto the server
+
+```bash
+$ ssh -i ~/Dropbox/yhathq/dev/yhat-dev.pem ubuntu@54.83.27.88
+```
+
+### Adding your public key
+
+```bash
+$ cat ~/.ssh/id_rsa.pub | ssh -i ~/Dropbox/yhathq/dev/yhat-dev.pem ubuntu@54.83.27.88 "sudo sshcommand acl-add dokku live"
+```

@@ -2,7 +2,8 @@
 /**
  * Module dependencies.
  */
-
+// alerts jessie if theres downtime
+require('newrelic');
 var express = require('express'),
     http = require('http'),
     fs = require('fs'),
